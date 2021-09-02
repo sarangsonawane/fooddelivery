@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+
+    <!-- Site Metas -->
+    <title>About us</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+  
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- color -->
+    <link id="changeable-colors" rel="stylesheet" href="css/colors/orange.css" />
+
+    <!-- Modernizer -->
+    <script src="js/modernizer.js"></script>
+
+
+
+
+</head>
+<body >
+
+    
+    <div id="site-header">
+        <header  style="background-color: black;" id="header" class="header-block-top">
+            <div class="container">
+                <div class="row">
+                    <div class="main-menu">
+                        <!-- navbar -->
+                         <div th:insert="@{/navbar}"> </div>
+                    </div>
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container-fluid -->
+        </header>
+        <!-- end header -->
+    </div>
+
+
+    <div style="padding-top: 130px;">
+
+    <div id="about" class="about-main pad-top-100 pad-bottom-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                        <h2 class="block-title"> About Us </h2>
+                        <h3>IT STARTED, QUITE SIMPLY, LIKE THIS...</h3>
+                        <p> We cannot deny the importance of food in our lives. As it is the basic need to survive.
+                             Yet some people waste not thinking that there are still some people that do not get any of it. </p>
+
+                        <p> In other words, we should take only that much that our stomach can allow. Or else there will be wasting of
+                             food. In India there are many people living in slums, they do not have proper shelter. Moreover, they are 
+                             not able to have even a one-time meal. They starve for days and are always in a state of sickness.
+                             Many children are there on roads who are laboring to get a daily meal. </p>
+
+                        <p> After seeing conditions like these people should not dare to waste food. Moreover, 
+                            we should always provide food to the needy ones as much as we can. </p>
+                    </div>
+                </div>
+                <!-- end col -->
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                        <div class="about-images">
+                            <img class="about-main" src="images/about-main.jpg" alt="About Main Image">
+                            <img class="about-inset" src="images/about-inset.jpg" alt="About Inset Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </div>
+</div>
+
+
+<div th:insert="@{/footer}"> </div>
+
+
+<!-- ALL JS FILES -->
+<script src="js/all.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- ALL PLUGINS -->
+<script src="js/custom.js"></script>
+
+</body>
+</html>

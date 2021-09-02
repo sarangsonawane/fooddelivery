@@ -1,0 +1,261 @@
+<!DOCTYPE html>  
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
+
+<style>  
+body{  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: #CCCCFF;  
+}  
+
+.container {  
+    padding: 50px;  
+  background-color: #40E0D0;  
+}  
+  
+input[type=text], input[type=password],  input[type=tel], input[type=email], input[type=number],input[type=textarea], textarea {  
+  width: 100%;  
+  padding: 15px;  
+  margin: 5px 0 22px 0;  
+  display: inline-block;  
+  border: none;  
+  background: #f1f1f1;  
+}  
+
+input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus, input[type=number]:focus,input[type=textarea]:focus {  
+  background-color: #9FE2BF;  
+  outline: none;  
+}  
+ div {  
+            padding: 10px 0;  
+         }  
+hr {  
+  border: 1px solid #f1f1f1;  
+  margin-bottom: 25px;  
+}  
+.registerbtn {  
+  background-color: #4CAF50;  
+  color: white;  
+  padding: 16px 20px;  
+  margin: 8px 0;  
+  border: none;  
+  cursor: pointer;  
+  width: 100%;  
+  opacity: 0.9;  
+}  
+.registerbtn:hover {  
+  opacity: 1;  
+}  
+</style>  
+
+
+</head>  
+
+
+<body>  
+<form th:action="@{/register}" method="POST" th:object="${user}">  
+
+  <div class="container">  
+  <h1> Registration Form</h1> 
+  <hr> 
+  
+ <label> Firstname </label>   
+<input type="text" name="firstName"  placeholder= "Enter Firstname"   required />   <br> 
+
+<label> Lastname: </label>    
+<input type="text" name="lastName"  placeholder=" Enter Lastname"  required /><br>  
+
+<label> Email: </label>    
+<input type="email" name="email"   placeholder="Enter E-mail" required />
+<br><br>  
+<label> Mobile Number: </label>    
+<input type="number" name="mobileNo"  placeholder="Enter a mobile number" pattern="[0-9]{10}" required /> <br> 
+
+<label>   
+Gender :  
+</label><br>  
+<input type="radio" value="Male" name="gender" checked  > Male   
+<input type="radio" value="Female" name="gender" > Female   
+<input type="radio" value="Other" name="gender" > Other
+<br> 
+
+
+
+ <label> Address: </label>    
+<input type="text" name="address"  placeholder=" Enter Correspondance Address" required />
+<br>  
+
+<label> City: </label>    
+<input type="text" name="city"  placeholder=" Enter a city"  required />
+<br>
+
+<label> State: </label>    
+<input type="text" name="state"  placeholder=" Enter a state"  required />
+<br>  
+
+  
+
+ 
+<label> pincode: </label>    
+<input type="number" name="pinCode"  placeholder=" Enter a zipcode"  required />
+<br>  
+
+
+ <label> Password: </label>    
+<input type="password" name="password"   placeholder="Enter a password" required />
+ <br>   
+ 
+ 
+
+
+<label> Role :  </label><br>  
+
+  <input type="radio" value="Customer"  name="role" id="cust"> Customer  
+  <input type="radio"  value="Restuarant" name="role" id="rest"> Restaurant
+  <input type="radio" value="Delivery"  name="role" id="deli"> Delivery Boy
+  <input type="radio" value="NGO"  name="role" id="ngo"> NGO
+<br> 
+
+
+<div id="Restaurant" >
+
+<label> Restaurant Name </label>    
+ <input type="text" id="restname"  name= "restaurantName" placeholder="Enter Restaurant Name"  />
+<br> 
+<label> License No: </label>    
+<input type="text" name="licenseNo"  placeholder="Enter your License No"   />
+<br> 
+
+
+			
+
+<br> 
+<label>Category: </label>    
+                     <select name="cateogry">
+                        <option >select</option>
+                        <option >Restuarant</option>
+                        <option >Cloud Kitchen</option>
+                        <option >Other</option>
+                        
+                    </select>   
+<br>     
+<br> 
+ <label >Restaurant Type</label>
+                     <select name="restaurantType" >
+                        <option >select</option>
+                        <option >DINE IN</option>
+                        <option >TAKEAWAY</option>
+                         <option >BOTH</option>
+                                          
+                       </select>  
+                       
+                       
+                       
+                       <div class="form-group">
+									<label for="img">Upload image</label> <input type="file" 
+										class="form-control-file" name="restaurantImage" />
+						</div>
+                       
+
+</div>
+
+<!-- image -->
+
+
+								
+
+
+
+<div id="Delivery" class="container">
+
+ <label>Adhar Card Number</label>    
+ <input type="text" name="adharNo"   placeholder="enter your aadhar card number"  />
+  
+ <label> Driving License No: </label>    
+ <input type="text" name="drivingLicese"  placeholder="Enter your License No"  />
+ 
+    
+</div>
+
+
+
+<div id="NGO" class="container">
+
+ <label class="form-label"> NGO Name </label>    
+ <input type="text" name="ngoName"  placeholder="Enter NGO Name"  />
+  
+ <label class="form-label"> REGISTRATION NUMBER : </label>    
+ <input type="text" name="ngoRegistrationNo"  placeholder="Enter Registration Number"  />
+ 
+  <label class="form-label">Ngo Bank Account Number</label>    
+  <input type="text" name="bankAccountNumber"   placeholder="Enter Account Number"  />
+  
+
+    
+</div>
+
+
+
+
+
+
+  
+<button type="submit" class="registerbtn">Register</button>
+
+
+
+<!-- jQuery code-->  
+    <script>
+       
+        $("#Customer").hide();
+$("#Restaurant").hide();
+$("#Delivery").hide();
+$("#NGO").hide();
+
+$("#rest").click(function(){
+  
+	   //$("#s1").html("CONFIRMED");
+	  
+		$("#Restaurant").show();
+		$("#Customer").hide();
+        $("#Delivery").hide();
+        $("#NGO").hide();
+		
+ });
+$("#cust").click(function(){
+	  
+	   //$("#s1").html("CONFIRMED");
+	  
+		$("#Customer").show();
+		$("#Restaurant").hide();
+        $("#Delivery").hide();
+        $("#NGO").hide();
+});
+
+$("#deli").click(function(){
+	  
+      //$("#s1").html("CONFIRMED");
+     
+       $("#Customer").hide();
+       $("#Restaurant").hide();
+       $("#Delivery").show();
+       $("#NGO").hide();
+});
+      
+
+ $("#ngo").click(function(){
+	  
+      //$("#s1").html("CONFIRMED");
+     
+       $("#Customer").hide();
+       $("#Restaurant").hide();
+       $("#Delivery").hide();
+       $("#NGO").show();
+});
+</script>
+     </div>  
+</form>  
+</body>  
+</html>

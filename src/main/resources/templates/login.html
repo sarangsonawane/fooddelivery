@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<body>
+<form th:action="@{/rolelogin}" method="post">
+<label>Enter the Username</label>
+<input type="text" name="email" />
+<label>Enter the Password</label>
+<input type="password" name="password"/>
+<input type="submit" value="Login" name="submit" class="submit" />
+</form>
+</body>
+</html>
